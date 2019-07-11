@@ -40,5 +40,15 @@ namespace WebApiProj.Controllers
 
             return dentist;
         }
+
+        // POST: api/Todo
+        [HttpPost]
+        public async Task<ActionResult<Dentist>> PostDentist(Dentist dentist)
+        {
+            _context.Dentists.Add(dentist);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetDentist), new { id = dentist.DentistId }, dentist);
+        }
     }
 }
