@@ -27,6 +27,18 @@ namespace WebApiProj.Controllers
             return await _context.Dentists.ToListAsync();
         }
 
+        // GET: api/Dentist/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Dentist>> GetDentist(int id)
+        {
+            var dentist = await _context.Dentists.FindAsync(id);
 
+            if (dentist == null)
+            {
+                return NotFound();
+            }
+
+            return dentist;
+        }
     }
 }
