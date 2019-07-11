@@ -27,8 +27,8 @@ namespace WebApiProj
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(opt =>
-                opt.UseInMemoryDatabase("DentalPractice"));
+            var connString = Configuration.GetConnectionString("LocalConnection");
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
