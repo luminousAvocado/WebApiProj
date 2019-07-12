@@ -31,7 +31,8 @@ namespace WebApiProj.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Patient>> GetPatient(int id)
         {
-            var patient = await _context.Patients.FindAsync(id);
+            var patient = await _context.Patients.Where(p => p.PatientId == id)
+                .Include(p => p.Dentist).FirstOrDefaultAsync();
 
             if (patient == null)
             {
