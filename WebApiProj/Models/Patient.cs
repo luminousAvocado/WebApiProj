@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebApiProj.Models
 {
-    public class Dentist
+    public class Patient
     {
-        public int DentistId { get; set; }
+        public int PatientId { get; set; }
 
         [Required]
         public string FirstName { get; set; }
@@ -24,8 +24,9 @@ namespace WebApiProj.Models
         [Required]
         public string Email { get; set; }
 
-        // We use ICollection because we may need to be able add/remove patients.
-        // But dont necessarily need to access by index (IList)
-        public ICollection<Patient> Patients { get; set; }
+        // DentistId as a FK to a patient's dentist. We make this 
+        // nullable in case primary dentist undetermined at time
+        public int? DentistId { get; set; }
+        public Dentist Dentist { get; set; }
     }
 }
