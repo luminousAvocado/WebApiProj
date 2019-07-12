@@ -9,7 +9,7 @@ using WebApiProj.Models;
 
 namespace WebApiProj.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/dentist")]
     [ApiController]
     public class DentistController : ControllerBase
     {

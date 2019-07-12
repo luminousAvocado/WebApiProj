@@ -24,6 +24,8 @@ namespace WebApiProj.Models
         [Required]
         public string Email { get; set; }
 
+        public bool? Active { get; set; } = true;
+
         // DentistId as a FK to a patient's dentist. We make this nullable 
         // in case primary dentist undetermined at time.
         // EF Core will automatically associate as FK, but can also use 

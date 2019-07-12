@@ -24,6 +24,8 @@ namespace WebApiProj.Models
         [Required]
         public string Email { get; set; }
 
+        public bool? Active { get; set; } = true;
+
         // We use ICollection because we may need to be able add/remove patients.
         // But dont necessarily need to access by index (IList)
         public ICollection<Patient> Patients { get; set; }
