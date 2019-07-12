@@ -41,7 +41,7 @@ namespace WebApiProj.Controllers
             return dentist;
         }
 
-        // POST: api/Todo
+        // POST: api/Dentist
         [HttpPost]
         public async Task<ActionResult<Dentist>> PostDentist(Dentist dentist)
         {
@@ -49,6 +49,38 @@ namespace WebApiProj.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetDentist), new { id = dentist.DentistId }, dentist);
+        }
+
+        // PUT: api/Dentist/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutDentist(int id, Dentist dentist)
+        {
+            if (id != dentist.DentistId)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(dentist).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        // DELETE: api/Dentist/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteDentist(int id)
+        {
+            var dentist = await _context.Dentists.FindAsync(id);
+
+            if (dentist == null)
+            {
+                return NotFound();
+            }
+
+            _context.Dentists.Remove(dentist);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }
