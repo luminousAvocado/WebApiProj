@@ -15,5 +15,13 @@ namespace WebApiProj.Models
 
         public DbSet<Dentist> Dentists { get; set; }
         public DbSet<Patient> Patients { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Dentist>()
+                .HasMany(d => d.Patients)
+                .WithOne(p => p.Dentist)
+                .OnDelete(DeleteBehavior.SetNull);
+        }
     }
 }
