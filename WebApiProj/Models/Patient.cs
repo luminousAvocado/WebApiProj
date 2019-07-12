@@ -24,8 +24,10 @@ namespace WebApiProj.Models
         [Required]
         public string Email { get; set; }
 
-        // DentistId as a FK to a patient's dentist. We make this 
-        // nullable in case primary dentist undetermined at time
+        // DentistId as a FK to a patient's dentist. We make this nullable 
+        // in case primary dentist undetermined at time.
+        // EF Core will automatically associate as FK, but can also use 
+        // Data Annotations [ForeignKey("DentistFK")] to specify
         public int? DentistId { get; set; }
         public Dentist Dentist { get; set; }
     }

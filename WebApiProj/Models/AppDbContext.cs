@@ -14,5 +14,6 @@ namespace WebApiProj.Models
         }
 
         public DbSet<Dentist> Dentists { get; set; }
+        public DbSet<Patient> Patients { get; set; }
     }
 }
