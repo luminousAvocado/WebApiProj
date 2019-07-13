@@ -14,3 +14,4 @@ If you have an old database, you should drop it first either manually or using t
 ```
     $ dotnet ef database drop
 ```
+The appsettings.json must also be modified for database connection and Auth0 settings
