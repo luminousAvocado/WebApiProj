@@ -260,6 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 
-# PAM settings
-appsettings.json
+# app settings
+#appsettings.json
 Migrations/
