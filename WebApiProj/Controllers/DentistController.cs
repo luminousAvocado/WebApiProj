@@ -22,7 +22,7 @@ namespace WebApiProj.Controllers
             _context = context;
         }
 
-        // GET: api/Dentist
+        // GET: api/Dentist //
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Dentist>>> GetDentists()
         {

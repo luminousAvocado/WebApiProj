@@ -44,7 +44,7 @@ namespace WebApiProj.Controllers
             return patient;
         }
 
-        // POST: api/Patient //
+        // POST: api/Patient
         [HttpPost]
         public async Task<ActionResult<Patient>> PostPatient(Patient patient)
         {
