@@ -1,6 +1,6 @@
 # Web API Demo
 
-This is a demo of a Web API using ASP .NET Core, Entity Framework Core, and SQL Server.
+This is a demo of a Web API using ASP .NET Core, Entity Framework Core, SQL Server, and Auth0.
 
 ## Setup
 
